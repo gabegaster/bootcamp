@@ -38,7 +38,6 @@ More Info: http://ugrad.stat.ubc.ca/R/library/e1071/html/Glass.html
 from sklearn.neighbors import KNeighborsClassifier
 import numpy
 import matplotlib.pyplot as plt
-from matplotlib.colors import ListedColormap
 
 # prettier printing
 numpy.set_printoptions(precision=6, suppress=True)
