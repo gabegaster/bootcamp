@@ -141,6 +141,17 @@ plt.xlabel('Chosen "K"')
 plt.xlim(1, Kmax)
 plt.show()
 
-## TODO: maybe Leave-one-out cross validation 
 
+
+from sklearn.grid_search import GridSearchCV
+tuned_parameters = [{
+        "weights": ["uniform","distance"], 
+        "algorithm": ['auto', 'ball_tree', 'kd_tree', 'brute'], 
+        "p": range(1,5), # playing with metrics here
+        "n_neighbors": range(1,30)
+    }]
+clf = GridSearchCV(KNeighborsClassifier(),tuned_parameters)
+clf.fit(train_data,train_labels)
+print "best score", clf.score(test_data,test_labels)
+print "best parameters", clf.best_params_
     
